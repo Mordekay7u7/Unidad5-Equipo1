@@ -1,0 +1,10 @@
+ID,Reglas Negocio,Entrada,Resultado_Esperado,Tipo
+CP-01,Prevenci¢n Citas Duplicadas,Paciente P1 sin citas previas hoy; nueva cita 10:00 AM,Cita creada exitosamente en estado RESERVADA,êxito
+CP-02,Prevenci¢n Citas Duplicadas,Paciente P1 ya tiene cita hoy a las 10:00 AM; intenta agendar otra a las 10:00 AM,Excepci¢n DuplicateAppointmentError: Cita duplicada detectada,Error
+CP-03,Prevenci¢n Citas Duplicadas,Paciente P1 tiene cita hoy a las 10:00 AM; intenta agendar a las 10:30 AM (mismo d°a diferente hora),Cita creada exitosamente en estado RESERVADA,L°mite
+CP-04,Restricci¢n por No-Shows,Paciente P2 con 1 no-show en 6 meses; reserva por WhatsApp,Reserva permitida por canal digital,êxito
+CP-05,Restricci¢n por No-Shows,Paciente P3 con 3 no-shows acumulados en 6 meses; intenta agendar por WhatsApp,Excepci¢n ChannelBlockedError: Agendamiento digital bloqueado,Error
+CP-06,Restricci¢n por No-Shows,Paciente P3 con 3 no-shows acumulados; agenda en recepci¢n presencial con pago anticipado,Cita creada exitosamente en estado CONFIRMADA_PAGADA,L°mite
+CP-07,Gesti¢n de Sobrecupo,MÇdico Dr. Garza (permite sobrecupo); 1 sobrecupo actual; solicita 2do sobrecupo,Sobrecupo registrado con validaci¢n pendiente del mÇdico,êxito
+CP-08,Gesti¢n de Sobrecupo,MÇdico Dr. Garza; 2 sobrecupos ocupados en el turno; intenta registrar 3er sobrecupo,Excepci¢n OverbookingLimitExceeded: L°mite m†ximo de 2 sobrecupos alcanzado,Error
+CP-09,Gesti¢n de Sobrecupo,MÇdico Dr. Trevi§o (NO permite sobrecupo); 0 sobrecupos; intenta agendar 1er sobrecupo,Excepci¢n OverbookingNotAllowed: El mÇdico no acepta sobrecupo,L°mite/Error

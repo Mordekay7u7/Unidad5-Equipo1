@@ -1,0 +1,7 @@
+Caso de Prueba,Rol Usuario,®Es Propietario?,Estado Pedido,AntigÅedad,Resultado Esperado
+test_owner_within_24h,Usuario regular,"S° (owner=1, user=1)",NEW,1 hora (< 24h),Permitido (True)
+test_stranger_denied,Usuario regular,"No (owner=1, user=2)",NEW,0 horas,Denegado (False)
+test_shipped_denied_even_admin,Administrador,"S° (owner=1, user=1)",SHIPPED,0 horas,Denegado (False)
+test_expired_denied,Usuario regular,"S° (owner=1, user=1)",NEW,25 horas (> 24h),Denegado (False)
+test_admin_can_cancel_other_user_order,Administrador,"No (owner=1, user=2)",NEW,0 horas,Permitido (True)
+test_owner_at_exactly_24h_denied,Usuario regular,"S° (owner=1, user=1)",NEW,24 horas exactas,Denegado (False)
