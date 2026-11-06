@@ -1,7 +1,3 @@
-Aquí tienes el archivo **`README.md`** completo en formato Markdown listo para copiar y guardar en la raíz de tu proyecto (`Proyecto_Python_Base_U5/`).
-
-Cubre los comandos de instalación, ejecución de pruebas, medición de cobertura, linteo, estructura del proyecto y explicación de la arquitectura de la solución de **MediNova**:
-
 ```markdown
 # Sistema de Gestión de Pedidos y Citas Médicas (MediNova)
 ## Unidad 5 · Integración, Pruebas y Calidad de Software
