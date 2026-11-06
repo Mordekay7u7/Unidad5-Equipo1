@@ -1,4 +1,5 @@
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
+
 import pytest
 
 # --- Clases de Dominio Simuladas de MediNova ---
@@ -56,7 +57,7 @@ class AppointmentService:
 
 # --- Pruebas Automáticas Pytest (9 Casos del PIA) ---
 
-now = datetime.now(timezone.utc)
+now = datetime.now(UTC)
 
 # --- Regla 1: Citas Duplicadas ---
 def test_cp01_schedule_success():

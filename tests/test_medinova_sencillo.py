@@ -1,18 +1,19 @@
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
+
 import pytest
 
 # IMPORTACIÓN CLAVE: Ahora los tests llamarán directamente a src/medinova.py
 from src.medinova import (
-    SistemaGestionCitas,
-    Paciente,
-    Medico,
-    CitaDuplicadaError,
     CanalWhatsAppBloqueadoError,
+    CitaDuplicadaError,
     LimiteSobrecupoAlcanzadoError,
+    Medico,
     MedicoNoAceptaSobrecupoError,
+    Paciente,
+    SistemaGestionCitas,
 )
 
-HORA_CONSULTA = datetime.now(timezone.utc)
+HORA_CONSULTA = datetime.now(UTC)
 
 # --- REGLA 1: PREVENCIÓN DE CITAS DUPLICADAS ---
 
